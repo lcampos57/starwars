@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="starwars.PlanetPage"
+             Title="Planetas">
+
+    <ContentPage.Content HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <StackLayout>
+
+            <ListView x:Name="PlanetsListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding name}" FontSize="30"  Grid.Row="0"></Label>
+                                    <Label Text="{Binding climate}" FontSize="10" Grid.Row="1"></Label>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
