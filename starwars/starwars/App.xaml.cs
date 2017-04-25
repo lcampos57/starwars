@@ -10,17 +10,8 @@ namespace starwars
             InitializeComponent();
 
             //MainPage = new starwars.MainPage();
+            MainPage = new starwars.TabPage();
 
-            //// tabbed page 
-            //var tabContainer = new TabbedPage();
-            //tabContainer.Children.Add(new ContentPage() { Title = "Films" });
-            //tabContainer.Children.Add(new ContentPage() { Title = "Personaje" });
-            //tabContainer.Children.Add(new ContentPage() { Title = "Planetas" });
-
-            //// The root page of your application
-            //MainPage = tabContainer;
-
-            MainPage = new starwars.PlanetPage();
         }
 
         protected override void OnStart()

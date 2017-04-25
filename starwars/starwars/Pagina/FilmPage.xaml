@@ -2,15 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="starwars.FilmPage"
-             Title="Films">
+             Title="Peliculas">
 
     
 
     <ContentPage.Content HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
         <StackLayout>
             
-            <Label Text="Peliculas" VerticalOptions="Center" Font="30"></Label>
-
             <ListView x:Name="FilmListView" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>

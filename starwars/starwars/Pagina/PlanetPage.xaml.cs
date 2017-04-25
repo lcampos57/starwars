@@ -23,6 +23,7 @@ namespace starwars
         public PlanetPage()
         {
             InitializeComponent();
+
             Planet = new ObservableCollection<Planets>();
             GetAllCharacters();
         }

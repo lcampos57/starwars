@@ -4,23 +4,7 @@
              xmlns:local="clr-namespace:starwars"
              x:Class="starwars.MainPage">
 
-
-            <!--<TabbedPage.Children>
-
-        <local:FilmPage>
-            
-        </local:FilmPage>
-
-        <ContentPage Title="Personaje">
-            <Label Text="Personaje" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-        </ContentPage>
-        <ContentPage Title="Planeta">
-            <Label Text="Planeta" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-        </ContentPage>
-
-    </TabbedPage.Children>-->
-
-    <!--<RelativeLayout>
+    <RelativeLayout>
             <Image Source="starwarslogo.png" Opacity="0.5"
                 RelativeLayout.WidthConstraint=
                   "{ConstraintExpression Type=RelativeToParent, Property=Width}"
@@ -31,9 +15,9 @@
             RelativeLayout.HeightConstraint=
               "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 
-                <Label Text="Star Wars - Lista de Peliculas" VerticalOptions="Center"
+                <Label Text="Star Wars - Información" VerticalOptions="Center"
          HorizontalOptions="Center" FontSize="30"/>
             </Grid>
-        </RelativeLayout>-->   
+        </RelativeLayout>   
     
 </TabbedPage>

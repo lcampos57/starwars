@@ -10,19 +10,20 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using starwars.Modelo;
 
-namespace starwars
+namespace starwars.Pagina
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PersonPage : ContentPage
+    public partial class PeoplePage : ContentPage
     {
         public ObservableCollection<People> Peoples { get; set; }
         private HttpClient _client;
 
         private const string PeopleDataUrl = "http://swapi.co/api/people";
 
-        public PersonPage()
+        public PeoplePage()
         {
             InitializeComponent();
+
             Peoples = new ObservableCollection<People>();
             GetAllCharacters();
         }
@@ -49,6 +50,22 @@ namespace starwars
             {
                 //DisplayAlert("Error", "Something went wrong", "Ok");
             }
+        }
+
+        public async void OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item == null) return;
+
+            var dataItem = e.Item as People;
+            var ItemCode = dataItem.url;
+
+            await Navigation.PushModalAsync(new PersonPage(ItemCode.ToString()));
+            //{
+            //    PersonDataUrl = ItemCode.ToString()
+            //});
+
+            this.PeopleListView.SelectedItem = null;
+
         }
     }
 }

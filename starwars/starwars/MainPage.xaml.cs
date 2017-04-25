@@ -7,6 +7,7 @@ namespace starwars
         public MainPage()
         {
             InitializeComponent();
+
         }
     }
 }

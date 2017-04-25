@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="starwars.PersonPage"
+             x:Class="starwars.Pagina.PeoplePage"
              Title="Personaje">
 
     <ContentPage.Content HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
         <StackLayout>
-           
-            <ListView x:Name="PeopleListView" HasUnevenRows="True">
+
+            <ListView x:Name="PeopleListView" HasUnevenRows="True"  ItemTapped="OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -18,7 +18,8 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding name}" FontSize="30"  Grid.Row="0"></Label>
-                                    <Label Text="{Binding height}" Grid.Row="1"></Label>
+                                    <Label Text="{Binding gender}" Grid.Row="1"></Label>
+                                    <Label Text="{Binding url}" Grid.Row="2"></Label>
                                 </Grid>
                             </ViewCell.View>
                         </ViewCell>
@@ -27,6 +28,5 @@
             </ListView>
         </StackLayout>
     </ContentPage.Content>
-
 
 </ContentPage>
