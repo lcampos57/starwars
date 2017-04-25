@@ -7,7 +7,7 @@
     <ContentPage.Content HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
         <StackLayout>
 
-            <ListView x:Name="PeopleListView" HasUnevenRows="True"  ItemTapped="OnItemTapped">
+            <ListView x:Name="PeopleListView" HasUnevenRows="True" ItemTapped="OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -18,8 +18,7 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding name}" FontSize="30"  Grid.Row="0"></Label>
-                                    <Label Text="{Binding gender}" Grid.Row="1"></Label>
-                                    <Label Text="{Binding url}" Grid.Row="2"></Label>
+                                    <Label Text="{Binding url}" x:Name="Url" Grid.Row="1"></Label>
                                 </Grid>
                             </ViewCell.View>
                         </ViewCell>
@@ -28,5 +27,5 @@
             </ListView>
         </StackLayout>
     </ContentPage.Content>
-
+             
 </ContentPage>

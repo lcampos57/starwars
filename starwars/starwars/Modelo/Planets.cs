@@ -7,14 +7,14 @@ namespace starwars.Modelo
     public class Planets
     {
         public string name { get; set; }
-        public int namerotation_period { get; set; }
-        public int orbital_period { get; set; }
-        public int diameter { get; set; }
-        public string climate { get; set; }
-        public string gravity { get; set; }
-        public string terrain { get; set; }
-        public string surface_water { get; set; }
-        public string population { get; set; }
+        //public int namerotation_period { get; set; }
+        //public int orbital_period { get; set; }
+        //public int diameter { get; set; }
+        //public string climate { get; set; }
+        //public string gravity { get; set; }
+        //public string terrain { get; set; }
+        //public string surface_water { get; set; }
+        //public string population { get; set; }
     }
 
     public class RootObjectPlanet

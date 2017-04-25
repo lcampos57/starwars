@@ -1,10 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:starwars"
              x:Class="starwars.MainPage">
 
-    <RelativeLayout>
+
+            <!--<TabbedPage.Children>
+
+        <local:FilmPage>
+            
+        </local:FilmPage>
+
+        <ContentPage Title="Personaje">
+            <Label Text="Personaje" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+        </ContentPage>
+        <ContentPage Title="Planeta">
+            <Label Text="Planeta" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+        </ContentPage>
+
+    </TabbedPage.Children>-->
+
+    <!--<RelativeLayout>
             <Image Source="starwarslogo.png" Opacity="0.5"
                 RelativeLayout.WidthConstraint=
                   "{ConstraintExpression Type=RelativeToParent, Property=Width}"
@@ -15,9 +31,9 @@
             RelativeLayout.HeightConstraint=
               "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 
-                <Label Text="Star Wars - Información" VerticalOptions="Center"
+                <Label Text="Star Wars - Lista de Peliculas" VerticalOptions="Center"
          HorizontalOptions="Center" FontSize="30"/>
             </Grid>
-        </RelativeLayout>   
+        </RelativeLayout>-->   
     
-</TabbedPage>
+</ContentPage>

@@ -5,13 +5,14 @@ namespace starwars
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
 
             //MainPage = new starwars.MainPage();
             MainPage = new starwars.TabPage();
-
+            
         }
 
         protected override void OnStart()

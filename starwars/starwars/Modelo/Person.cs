@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-
 namespace starwars.Modelo
 {
-
     public class RootObjectPerson
     {
         public string name { get; set; }
@@ -25,6 +23,13 @@ namespace starwars.Modelo
         //public string edited { get; set; }
         //public string url { get; set; }
         //public IEnumerable Person { get; internal set; }
+    }
+
+    public class Person
+    {
+        public string name { get; set; }
+
+        public string info { get; set; }
     }
 
 }

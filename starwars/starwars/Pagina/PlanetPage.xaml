@@ -18,7 +18,7 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding name}" FontSize="30"  Grid.Row="0"></Label>
-                                    <Label Text="{Binding climate}" FontSize="10" Grid.Row="1"></Label>
+                                    <!--<Label Text="{Binding climate}" FontSize="10" Grid.Row="1"></Label>-->
                                 </Grid>
                             </ViewCell.View>
                         </ViewCell>

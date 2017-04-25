@@ -6,7 +6,7 @@
     <ContentPage.Content HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
         <StackLayout>
 
-            <ListView x:Name="PeopleListView" HasUnevenRows="True">
+            <ListView x:Name="PersonListView" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -14,30 +14,16 @@
                                 <Grid Padding="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding name}" FontSize="50"  Grid.Row="0"></Label>
-                                    <Label Text="{Binding height}" FontSize="30" Grid.Row="0"></Label>
-                                    <Label Text="{Binding mass}" FontSize="30" Grid.Row="0"></Label>
-                                    <Label Text="{Binding hair_color}" FontSize="30" Grid.Row="0"></Label>
-                                    <Label Text="{Binding skin_color}" FontSize="30" Grid.Row="0"></Label>
-                                    <Label Text="{Binding eye_color}" FontSize="30" Grid.Row="0"></Label>
-                                    <Label Text="{Binding birth_year}" FontSize="30" Grid.Row="0"></Label>
-                                    <Label Text="{Binding gender}" FontSize="30" Grid.Row="0"></Label>
+                                    <Label Text="{Binding info}" FontSize="30"  Grid.Row="0"></Label>
                                 </Grid>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
         </StackLayout>
     </ContentPage.Content>
-    
+
 </ContentPage>

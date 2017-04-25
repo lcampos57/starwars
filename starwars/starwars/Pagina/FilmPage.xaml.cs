@@ -23,7 +23,6 @@ namespace starwars
         public FilmPage()
         {
             InitializeComponent();
-
             Films = new ObservableCollection<Films>();
             GetAllCharacters();
         }

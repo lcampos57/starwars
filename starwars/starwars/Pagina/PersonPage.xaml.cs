@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
@@ -13,44 +10,41 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using starwars.Modelo;
 using System.Net.Http.Headers;
+using System.Collections.Generic;
 
 namespace starwars.Pagina
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PersonPage : ContentPage
     {
-        //public ObservableCollection<Person> Persons { get; set; }
-        //private HttpClient _client;
+        ObservableCollection<Person> persons = new ObservableCollection<Person>();
 
-        private string _PersonDataUrl;
-        public string PersonDataUrl
+        private string _PeopleSelDataUrl;
+        public string PeopleSelDataUrl
         {
-            get { return _PersonDataUrl; }
+            get { return _PeopleSelDataUrl; }
             set
             {
-                _PersonDataUrl = value;
+                _PeopleSelDataUrl = value;
             }
         }
 
         public PersonPage(string DataPeople)
         {
             InitializeComponent();
-
-            PersonDataUrl = DataPeople;
-            //Persons = new ObservableCollection<Person>();
+            PeopleSelDataUrl = DataPeople;
             GetAllCharacters();
+
         }
 
         public async Task GetAllCharacters()
         {
             try
             {
-
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri(PersonDataUrl);
-                // Add an Accept header for JSON format.  
+                client.BaseAddress = new Uri(PeopleSelDataUrl);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                // List all Names.  
                 HttpResponseMessage response = client.GetAsync("").Result;  // Blocking call!  
                                                                             //if (response.IsSuccessStatusCode)
                                                                             //{
@@ -59,31 +53,20 @@ namespace starwars.Pagina
                 if (!string.IsNullOrEmpty(respuesta))
                 {
                     var data = JsonConvert.DeserializeObject<RootObjectPerson>(respuesta);
-                    //foreach (var person in data.Persons)
-                    //{
-                    //    Persons.Add(person);
-                    //}
 
-                    //PeopleListView.ItemsSource = Persons;
+                    persons.Add(new Person { name = data.name.ToString() });
+                    persons.Add(new Person { info = "Peso: " + data.height.ToString() });
+                    persons.Add(new Person { info = "Cabello: " + data.hair_color.ToString() });
+                    persons.Add(new Person { info = "Apariencia: " + data.skin_color.ToString() });
+                    persons.Add(new Person { info = "Color de ojos: " + data.eye_color.ToString() });
+                    persons.Add(new Person { info = "Cumpleaños: " + data.birth_year.ToString() });
+                    persons.Add(new Person { info = "genero: " + data.gender.ToString() });
+                    persons.Add(new Person { info = "hogar: " + data.homeworld.ToString() });
 
+                    PersonListView.ItemsSource = persons;
+                    
                 }
 
-
-
-
-                //_client = new HttpClient();
-                //var response = await _client.GetStringAsync(PersonDataUrl);
-
-                //if (!string.IsNullOrEmpty(response))
-                //{
-                //    var data = JsonConvert.DeserializeObject<RootObjectPerson>(response);
-                //    foreach (var person in data.Person)
-                //    {
-                //        Persons.Add(person);
-                //    }
-
-                //    PeopleListView.ItemsSource = Persons;
-                //}
 
 
             }
@@ -92,5 +75,6 @@ namespace starwars.Pagina
                 //DisplayAlert("Error", "Something went wrong", "Ok");
             }
         }
+
     }
 }

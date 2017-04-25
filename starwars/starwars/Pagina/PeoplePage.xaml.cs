@@ -9,6 +9,7 @@ using System.Net.Http;
 //using System.Threading.Tasks;
 using Newtonsoft.Json;
 using starwars.Modelo;
+using starwars.Pagina;
 
 namespace starwars.Pagina
 {
@@ -59,10 +60,10 @@ namespace starwars.Pagina
             var dataItem = e.Item as People;
             var ItemCode = dataItem.url;
 
-            await Navigation.PushModalAsync(new PersonPage(ItemCode.ToString()));
-            //{
-            //    PersonDataUrl = ItemCode.ToString()
-            //});
+            await Navigation.PushModalAsync(new PersonPage(ItemCode.ToString())
+            {
+                PeopleSelDataUrl = ItemCode.ToString()
+            });
 
             this.PeopleListView.SelectedItem = null;
 
